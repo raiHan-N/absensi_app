@@ -43,14 +43,6 @@ function renderToHtml() {
     <div class="card" draggable="true" ondragend="handleDelete(${i})">  
       <span>  ${i + 1}. &nbsp; ${e.nama_lengkap} </span>
       <span>  ${e.waktu} ${e.tanggal} </span>
-      <div class="btn_group">
-      <button id="btn_edit" onclick="handleEdit(${i})"><span class="material-symbols-rounded">
-      edit
-      </span> Edit </button>
-      <button id="btn_delete" onclick="handleDelete(${i})"><span class="material-symbols-rounded">
-      delete
-      </span> Delete </button></div>
-     
     </div>
     `;
   });
@@ -62,12 +54,5 @@ function handleDelete(index) {
   absensi_data.splice(index, 1);
 
   // render kembali data dalam array ke html
-  renderToHtml();
-}
-
-// edit function
-function handleEdit(index) {
-  let editVal = prompt('Masukkan Nama Anda : ');
-  absensi_data[index].nama_lengkap = editVal;
   renderToHtml();
 }
